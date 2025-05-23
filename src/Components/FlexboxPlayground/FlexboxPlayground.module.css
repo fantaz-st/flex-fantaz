@@ -1,0 +1,128 @@
+/* ─────────── Layout ────────── */
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.controlsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+/* ─────────── Controls ────────── */
+.controlBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.controlLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+}
+
+/* Stepper (+ / –) */
+.stepperContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stepperBtn {
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f2f2f2;
+  font: inherit;
+  cursor: pointer;
+}
+.stepperBtn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.childCount {
+  min-width: 2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ─────────── Preview + Output Row ────────── */
+.displayRow {
+  display: flex;
+  gap: 1rem;
+}
+@media (max-width: 768px) {
+  .displayRow {
+    flex-direction: column;
+  }
+}
+
+/* Preview area */
+.preview {
+  flex: 3 1 0; /* ≈75 % width */
+  width: 100%;
+  min-height: 500px;
+  border: 2px dashed #ccc;
+  padding: 1rem;
+  gap: 0.5rem;
+  overflow: hidden;
+}
+.childBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem; /* overridden inline */
+  height: 4rem;
+  font-weight: 700;
+  color: #fff;
+  background: #3b82f6;
+  border-radius: 6px;
+}
+
+/* Code-output column */
+.cssOutputContainer {
+  flex: 1 1 0; /* ≈25 % width */
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.cssOutput {
+  background: #f7f7f7;
+  padding: 1rem;
+  border-radius: 6px;
+  white-space: pre;
+  font-size: 0.875rem;
+  margin: 0;
+}
+.copyBtn {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.copyBtn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
